@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <title>Stars</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+        <link href="styles.css" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section id="container-fluid vh-100 p-0">
+            <div id="navbar-holder"></div>
+
+            <div class="card text-bg-dark p-0">
+              <img src="/image/ghows-MO.webp" class="card-img" style="object-fit: cover; height: 100vh; width: 100%" alt="...">
+              <div class="card-img-overlay d-flex flex-row align-items-center">
+                <h1 class="txt textAlign"> Stars </h1>
+              </div>
+            </div>
+        </section>
+
+        <section>
+          <div class="container my-5 py-5">
+            <h1 class="txt text-dark"> What is a Star?</h1>
+            <div class="shadow">
+              <img src="/image/AdobeStock_101348318-removebg-preview.webp" class="img-thumnail" style="max-width: 500px;object-fit: contain;" alt="...">
+            </div>
+            <div>
+              <h1 class="py-5">
+                Stars are massive, luminous spheres of plasma held together by gravity. These celestial objects are the primary sources of light and heat in the universe, playing a central role in the formation of galaxies and planetary systems. Stars vary greatly in size, mass, and temperature, from small red dwarfs to massive blue giants.
+              </h1>
+              <h1 class="fs-1 fw-bold">Types of Stars</h1>
+              <h2 class="fs-1">
+                Stars are classified into different types based on their characteristics:
+              </h2>
+              <ul class="fs-1">
+                <li>Main Sequence Stars: These are stars, like our Sun, that fuse hydrogen into helium in their cores.
+                </li>
+                <li>Red Giants: Older stars that have expanded and cooled, glowing with a reddish hue.
+                </li>
+                <li>White Dwarfs: The remnants of stars that have exhausted their nuclear fuel, glowing faintly as they cool.
+                </li>
+                <li>Neutron Stars: Extremely dense remnants of massive stars that have undergone supernova explosions.
+                </li>
+                <li>Black Holes: Formed when the core of a massive star collapses under its gravity, becoming a region where nothing, not even light, can escape.
+                </li>
+              </ul>
+              <h1 class="fs-1 fw-bold py-5">
+                The Life Cycle of Stars
+              </h1>
+              <h1 style="font-family: arial">
+                Stars begin their lives in vast clouds of gas and dust, known as nebulae. Under the influence of gravity, these clouds collapse to form a protostar, which eventually ignites nuclear fusion in its core. Depending on their mass, stars follow different evolutionary paths. Massive stars may end their lives in spectacular supernova explosions, leaving behind neutron stars or black holes, while smaller stars become white dwarfs.
+                Stars also play a key role in the enrichment of the universe, creating heavier elements during their lifetimes and distributing them into space upon their deaths. These elements are the building blocks of planets and life itself.
+              </h1>
+              <h1 class="py-5" style="font-family: arial">
+                Studying stars provides invaluable insights into the history and evolution of the universe. Observing their light reveals information about their composition, temperature, and distance. Stars also serve as cosmic laboratories, helping scientists explore phenomena like nuclear fusion, gravity, and the behavior of matter under extreme conditions.
+                The study of stars is not only a journey into understanding the cosmos but also a reflection of our place within it. Every atom in our bodies was forged in the heart of a star, making these celestial objects a profound connection to the universe's past and future.
+              </h1>
+          </div>
+        </section>
+
+        <script>
+            window.onload = function() {
+              fetch('navbar.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('navbar-holder').innerHTML= data;
+              })
+              .catch(error => {
+                console.error('Error loading navbar:', error);
+              });
+            }
+          </script>
+    <body>
+
+</html>

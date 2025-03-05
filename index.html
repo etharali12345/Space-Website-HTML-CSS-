@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>homepage</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+        <link href="styles.css" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <section id="head">
+            <div class="headcontainer textAlign">
+                <div id="navbar-holder"></div>
+                <div>
+                    <h1 class="txt">Welcome<span></span></h1>
+                    <h1 class="txt">to GalaxyQuest!<span></span></h1>
+                    <h1 class="txt">Your Adventure Awaits!<span></span></h1>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <section>
+              <div class="container-fluid" style="padding:0 10rem 0 10rem;">
+                <div class="container my-5 py-5" >
+                  <h1 id="title"> Exploring Celestial Bodies </h1>
+                  <h1 id="text"> Space exploration is a thrilling pursuit of knowledge, pushing the boundaries of human capability.
+                    From early milestones like the Apollo moon landings to today's missions exploring Mars and beyond, space exploration offers new scientific insights and technological advancements.
+                    The future holds exciting possibilities, including manned missions to Mars, asteroid mining, and the search for extraterrestrial life.
+                    With progress in propulsion and AI, space is becoming more accessible, inspiring people to dream beyond our planet and explore the cosmos.</h1>
+                </div>
+                <div class="row row-cols-sm-1 row-cols-lg-4 justify-content-around" style="row-gap: 250px" >
+                  <div class="col d-flex justify-content-center align-items-center">
+                    <div class="card text-center rounded-4 h-100 shadow-lg card-grow" style="min-width:250px">
+                      <img src="image/NGC_4414_(NASA-med).jpg" class="card-img-top h-75 rounded-4" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title" id="title">Galaxies</h5>
+                        <p class="card-text">Galaxies are huge collections of stars, gas, and dust, held together by gravity. Our Milky Way is one of billions, each with countless stars.</p>
+                        <div class="d-grid col-6 mx-auto" style="padding-top: 5rem">
+                          <a href="page1.html" class="btn btn-primary fs-2">Explore</a>
+                        </div>                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col d-flex justify-content-center align-items-center">
+                    <div class="card rounded-4 text-center h-100 shadow-lg card-grow" style="min-width:250px">
+                    <img src="image/sun-h1180-jpg.webp" class="card-img-top h-75 rounded-4" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title" id="title">Stars</h5>
+                      <p class="card-text">
+                        Stars are glowing balls of hot gas that produce light and immense heat through nuclear fusion. They vary greatly in size, color, and life cycle.
+                      </p>
+                      <div class="d-grid col-6 mx-auto" style="padding-top: 5rem">
+                        <a href="page2.html" class="btn btn-primary fs-2">Explore</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col d-flex justify-content-center align-items-center">
+                    <div class="card rounded-4 text-center h-100 shadow-lg card-grow" style="min-width:250px">
+                      <img src="image/Screen-Shot-2017-02-23-at-10.37.49-AM.png" class="card-img-top h-75 rounded-4" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title" id="title">Planets</h5>
+                        <p class="card-text">Planets are large objects that orbit stars. They can be rocky, like Earth, or gas giants, like Jupiter, and may have moons or atmospheres.</p>
+                        <div class="d-grid col-6 mx-auto" style="padding-top: 5rem">
+                          <a href="space/page3.html" class="btn btn-primary fs-2">Explore</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+        </main>
+
+        <script>
+          window.onload = function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('navbar-holder').innerHTML= data;
+            })
+            .catch(error => {
+              console.error('Error loading navbar:', error);
+            });
+          }
+        </script>
+    </body>
+</html>

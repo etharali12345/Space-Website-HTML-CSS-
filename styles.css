@@ -1,0 +1,189 @@
+*
+{
+    padding= 0 px;
+    margin = 0 px;
+    /*border-box; element's width and height include its padding and border.*/
+    /*Default (content-box): Width and height only apply to the content, doesn't include the pading and the border*/
+    box-sizing = border-box;
+}
+
+body
+{
+    padding-bottom: 400px;
+    background-color: white;
+}
+html
+{
+    font-family: "Roboto", arial;
+    font-size: 8px;
+}
+
+/*_______________________________________head___________________________________________*/
+.headcontainer
+{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#head{
+    background-image: url(image/space.jpg);
+    background-size: cover;
+    background-position: top right;
+    /*relative?? because it's gonna conatin children (like the ::after ) inside it and there sized are based on it*/
+    position: relative;
+    /*have higher number than ::after? to place other content inside the #hero container (like text, link) above the overlay effect (::after).
+     (::after) still covers the entire background of the #hero container? because it is positioned absolutely*/
+    z-index: 1;
+}
+
+/*pseudo-element*/
+#head::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.textAlign{
+    padding: 0 60px;
+    /*used in a flex container, Aligns the items at the beginning of the container*/
+    justify-content: flex-start;
+}
+
+
+
+.txt{
+    color: white;
+    font-size: 5rem;
+}
+
+#head h1{
+    position: relative;
+    width: fit-content; /*make the block fit the contnet (no shrink nor strech)(when we make the span it will be on the size of the content) */
+    color: rgba(255, 255, 255, 0);
+    animation: reveal_text 0.5s ease forwards;  /*forwards makes an element keep the styles from the last keyframe of an animation after it finishes, instead of reverting to its original styles.*/
+}
+
+
+
+#head h1 span{
+    position: absolute;
+    /*span style the word within it. Since there is no world in it, it wont show. To cover the eniter h1 block we need to set the width and height to 100%*/
+    width: 0%;  /*making the width of it 0 for the transation so the highlight begin in 50% transition*/
+    height: 100%;
+    top: 0;  /*if we didn't write the top and left it will start at the end of sentences*/
+    left: 0;
+
+    background-color: rgb(15, 20, 43);
+    animation: reveal 1s ease; /*ease: Starts slow, speeds up, and then slows down. (linear, ease-in, ease-out) */
+}
+
+/*decide the animation-delay of each h1*/
+/*we make the delay of the text reveal after the box to give the effect the the text is showup after the box directly*/
+#head h1:nth-child(1){
+    animation-delay:1.5s;
+}
+#head h1:nth-child(2){
+    animation-delay:2.5s;
+}
+#head h1:nth-child(3){
+    animation-delay:3.5s;
+}
+
+#head h1:nth-child(1) span{
+    animation-delay:1s;
+}
+#head h1:nth-child(2) span{
+    animation-delay:2s;
+}
+#head h1:nth-child(3) span{
+    animation-delay:3s;
+}
+
+@keyframes reveal{
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0%;
+        left: 100%
+    }
+}
+
+@keyframes reveal_text{
+    100% {
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+/*_______________________________________2nd section___________________________________________*/
+#title
+{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#text{
+    font-family: "arial";
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+    color: black;
+}
+
+.card
+{
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    background-color: black;
+    color: white;
+}
+.card-img-top {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .btn{
+    background-color: rgb(104, 24, 158);
+    border: 0;
+  }
+
+  .card-grow{
+    transition: transform 0.3s ease;
+  }
+
+  .card-grow:hover{
+    transform: scale(1.12);
+  }
+
+  @media(max-width: 991px)
+  {
+
+    html{
+        font-size: 13px;
+    }
+     .card{
+        min-height: 50vh;
+     }
+    .sidebar{
+        background-color: rgb(0,0,0, 0.50);
+        backdrop-filter: blur(5px);
+    }
+
+    .card-grow:hover{
+        transform: none;
+      }
+  }
+
+
